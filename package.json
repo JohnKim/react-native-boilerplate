@@ -17,6 +17,8 @@
     "react": "^0.14.8",
     "react-native": "^0.25.1",
     "react-native-fbsdk": "^0.1.0",
+    "react-native-gifted-listview": "github:johnkim/react-native-gifted-listview",
+    "react-native-gifted-spinner": "github:johnkim/react-native-gifted-spinner",
     "react-native-image-picker": "^0.18.15",
     "react-native-linear-gradient": "^1.5.6",
     "react-native-md-textinput": "^1.9.2",
