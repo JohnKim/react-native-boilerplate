@@ -1,0 +1,39 @@
+{
+  "name": "S5Trippin",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "server": "babel-node ./server/server.js",
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "express-graphql": "^0.5.1",
+    "graphql-relay": "^0.4.1",
+    "moment": "^2.13.0",
+    "parse": "^1.8.3",
+    "parse-dashboard": "^1.0.11",
+    "parse-server": "^2.2.9",
+    "react": "^0.14.8",
+    "react-native": "^0.25.1",
+    "react-native-fbsdk": "^0.1.0",
+    "react-native-image-picker": "^0.18.15",
+    "react-native-linear-gradient": "^1.5.6",
+    "react-native-md-textinput": "^1.9.2",
+    "react-native-webview-bridge": "^0.20.3",
+    "react-redux": "^4.4.5",
+    "react-relay": "^0.8.1",
+    "redux": "^3.5.2",
+    "redux-logger": "^2.6.1",
+    "redux-persist": "^3.1.1",
+    "redux-thunk": "^2.1.0"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.8.0",
+    "babel-polyfill": "^6.8.0",
+    "babel-relay-plugin": "^0.8.1",
+    "faker": "^3.1.0",
+    "react-native-network-boot": "^1.0.3"
+  }
+}
