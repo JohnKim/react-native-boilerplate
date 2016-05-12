@@ -1,5 +1,5 @@
 /**
- * @providesModule s5-action
+ * @providesModule s5-actions
  */
 
 const commonActions = require('./common');

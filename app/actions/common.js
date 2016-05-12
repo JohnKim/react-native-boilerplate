@@ -3,12 +3,15 @@ import {
   Platform,
   InteractionManager,
 } from 'react-native';
+
 import {
   APP_NAME,
   APP_IDENTIFIER_IOS,
   APP_IDENTIFIER_ANDROID
 } from '../env';
+
 import Parse from 'parse/react-native';
+
 
 export const LOADED_CONFIG = 'LOADED_CONFIG';
 

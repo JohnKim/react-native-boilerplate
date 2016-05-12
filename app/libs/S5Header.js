@@ -14,35 +14,29 @@ import {
  TouchableOpacity,
 } from 'react-native';
 
-
-var S5Colors = require('S5Colors');
-
-export type Layout =
-    'default'      // Use platform defaults (icon on Android, text on iOS)
-  | 'icon'         // Always use icon
-  | 'title';       // Always use title
-
-export type Foreground = 'light' | 'dark';
+import S5Colors from 'S5Colors';
 
 export type Item = {
-  title?: string;
-  icon?: number;
-  layout?: Layout;
-  onPress?: () => void;
+  title: React.PropTypes.string;
+  icon: React.PropTypes.number;
+  layout: React.PropTypes.oneOf(['default', 'icon', 'title']);
+  onPress: React.PropTypes.func;
 };
 
-export type Props = {
-  title: string;
-  leftItem?: Item;
-  rightItem?: Item;
-  extraItems?: Array<Item>;
-  foreground?: Foreground;
-  style: any;
-  children: any;
+const sharedPropTypes = {
+  title: React.PropTypes.string.isRequired;
+  leftItem: Item;
+  rightItem: Item;
+  extraItems: React.PropTypes.arrayOf(Item);
+  foreground: React.PropTypes.oneOf(['default', 'icon', 'title']);
+  style: React.PropTypes.any;
+  children: React.PropTypes.any;
 };
 
 class S5HeaderAndroid extends Component {
-  props: Props;
+
+  static propTypes = sharedPropTypes;
+  //static defaultProps = {};
 
   render() {
     const {leftItem, rightItem, extraItems} = this.props;
@@ -104,7 +98,8 @@ class S5HeaderAndroid extends Component {
 
 
 class S5HeaderIOS extends React.Component {
-  props: Props;
+  static propTypes = sharedPropTypes;
+  //static defaultProps = {};
 
   render() {
     const {leftItem, title, rightItem, foreground} = this.props;
@@ -137,10 +132,11 @@ class S5HeaderIOS extends React.Component {
 
 }
 
-class ItemWrapperIOS extends React.Component {
-  props: {
+class ItemWrapperIOS extends Component {
+
+  static propTypes = {
     item: Item;
-    color: string;
+    color: React.PropTypes.string;
   };
 
   render() {
