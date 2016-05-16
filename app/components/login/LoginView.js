@@ -12,10 +12,8 @@ import {
   Text,
 } from 'react-native';
 
-import {
-  Libs.S5Colors as S5Colors,
-  Actions.skipLogin as skipLogin,
-} from 's5';
+import { S5Colors } from 's5-lib';
+import { skipLogin } from 's5-action';
 
 var LoginButton = require('./LoginButton');
 

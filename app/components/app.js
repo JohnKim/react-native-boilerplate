@@ -9,11 +9,8 @@ import {
   Linking,
 } from 'react-native';
 
-import {
-  Envs.VERSION                as VERSION,
-  Actions.loadConfig          as loadConfig,
-  Actions.updateInstallation  as updateInstallation,
-} from 's5';
+import { VERSION } from 's5-env';
+import { loadConfig, updateInstallation } from 's5-action';
 
 import LoginView from './login/LoginView';
 import S5Navigator from './navigator';
@@ -24,7 +21,7 @@ import { connect } from 'react-redux';
 class S5App extends Component {
 
   static propTypes = {
-    isLoggedIn : React.PropTypes.func;
+    isLoggedIn : React.PropTypes.func,
   };
 
   componentDidMount() {

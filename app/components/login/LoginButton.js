@@ -1,37 +1,25 @@
 
 import React, { Component } from 'react';
-
-import {
-  StyleSheet,
-} from 'react-native';
-
-import {
-  Libs.S5Button as S5Button,
-  Actions.logInWithFacebook as logInWithFacebook,
-} from 's5';
-
+import { StyleSheet } from 'react-native';
+import { S5Button } from 's5-lib';
+import { logInWithFacebook } from 's5-action';
 import { connect } from ('react-redux');
 
 // Login Button Class
 class LoginButton extends Component {
 
-  props: {
-    style: any;
-    source?: string; // For Facebook Developer Analytics
-    dispatch: (action: any) => Promise;
-    onLoggedIn: ?() => void;
+  static propTypes = {
+    style: React.PropTypes.any,
+    source: React.PropTypes.string,
+    dispatch: React.PropTypes.func,
+    onLoggedIn: React.PropTypes.func,
   };
 
-  state: {
-    isLoading: boolean;
-  };
+  state = {
+    isLoading: false,
+  }
 
   _isMounted: boolean;
-
-  constructor() {
-    super();
-    this.state = { isLoading: false };
-  }
 
   componentDidMount() {
     this._isMounted = true;

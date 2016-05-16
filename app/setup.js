@@ -4,10 +4,8 @@
  */
 
 import React, { Component } from 'react';
-import {
-  FacebookSDK,
-  S5Env,
-} from 's5-component';
+import { APP_ID, SERVER_URL } from 's5-env';
+import { FacebookSDK } from 's5-util';
 
 import Parse from 'parse/react-native';
 import Relay from 'react-relay';
@@ -21,14 +19,14 @@ function setup(): Component {
 
   console.disableYellowBox = true;
 
-  Parse.initialize(S5Env.APP_ID);
-  Parse.serverURL = `${S5Env.SERVER_URL}/parse`;
+  Parse.initialize(APP_ID);
+  Parse.serverURL = `${SERVER_URL}/parse`;
 
   FacebookSDK.init();
   Parse.FacebookUtils.init();
 
   Relay.injectNetworkLayer(
-    new Relay.DefaultNetworkLayer(`${S5Env.SERVER_URL}/graphql`, {
+    new Relay.DefaultNetworkLayer(`${SERVER_URL}/graphql`, {
       fetchTimeout: 30000,
       retryDelays: [5000, 10000],
     })

@@ -12,8 +12,8 @@ import {
 
 import Parse from 'parse/react-native';
 
-
 export const LOADED_CONFIG = 'LOADED_CONFIG';
+export const SWITCH_TAB = 'SWITCH_TAB';
 
 export async function loadConfig() {
   const config = await Parse.Config.get();
@@ -23,6 +23,15 @@ export async function loadConfig() {
     config,
   };
 }
+
+export function switchTab(tab) {
+  return {
+    type: SWITCH_TAB,
+    tab,
+  };
+}
+
+/**************************** DO NOT TRIGGERED ********************************/
 
 export async function currentInstallation() {
   const installationId = await Parse._getInstallationId();
@@ -38,13 +47,4 @@ export async function currentInstallation() {
 export async function updateInstallation(updates) {
   const installation = await currentInstallation();
   await installation.save(updates);
-}
-
-export const SWITCH_TAB = 'SWITCH_TAB';
-
-export function switchTab(tab) {
-  return {
-    type: 'SWITCH_TAB',
-    tab,
-  };
 }

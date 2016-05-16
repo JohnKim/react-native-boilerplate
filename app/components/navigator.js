@@ -8,9 +8,7 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import {
-  Actions.switchTab as switchTab,
-} from 's5';
+import { switchTab } from 's5-action';
 
 import TabsView from './tabs/tabsView';
 

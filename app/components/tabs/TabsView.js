@@ -8,34 +8,29 @@ import {
   Navigator,
 } from 'react-native';
 
-import {
-  Libs.S5Colors as S5Colors,
-  Actions.switchTab as switchTab,
-} from 's5';
+import { S5Colors }     from 's5-lib';
+import { switchTab }    from 's5-action';
 
-import MapView from './map';
+import MapView          from './map';
 import NotificationView from './notification';
-import PostView from './post';
-import ProfileView from './profile';
+import PostView         from './post';
+import ProfileView      from './profile';
 
-var { connect } = require('react-redux');
-
-
-import type {Tab} from '../reducers/navigation';
+import { connect }      from 'react-redux';
 
 class TabsView extends Component {
 
   static propTypes = {
-    tab: React.PropTypes.oneOf(['map', 'post', 'profile', 'notification']);
-    onTabSelect: React.PropTypes.func;
-    navigator: Navigator;
+    tab: React.PropTypes.oneOf(['map', 'post', 'profile', 'notification']),
+    onTabSelect: React.PropTypes.func,
+    navigator: Navigator,
   };
 
   componentDidMount() {
     StatusBarIOS && StatusBarIOS.setStyle('light-content');
   }
 
-  onTabSelect(tab: Tab) {
+  onTabSelect(tab) {
     if (this.props.tab !== tab) {
       this.props.onTabSelect(tab);
     }

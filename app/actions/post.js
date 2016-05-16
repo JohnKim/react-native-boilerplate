@@ -2,7 +2,6 @@
 const Parse = require('parse/react-native');
 const InteractionManager = require('InteractionManager');
 
-export const LOADED_POSTS = "LOADED_POSTS";
 export const DEFAULT_PAGE_SIZE = 20;
 
 const Post = Parse.Object.extend('Post');

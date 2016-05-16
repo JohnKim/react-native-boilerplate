@@ -1,9 +1,9 @@
 /**
  *
- * @providesModule s5-libs
+ * @providesModule s5-lib
  */
 
-var S5Libs = {
+var S5Lib = {
 
   get S5Colors() { return require('S5Colors'); },
   get S5Header() { return require('S5Header'); },
@@ -12,4 +12,4 @@ var S5Libs = {
 
 };
 
-module.exports = S5Libs;
+module.exports = S5Lib;

@@ -5,20 +5,19 @@
 
 'use strict';
 
-/* import modules *************************************************************/
-var {applyMiddleware, createStore} = require('redux');
-var {persistStore, autoRehydrate} = require('redux-persist');
-var {AsyncStorage} = require('react-native');
+import { applyMiddleware, createStore } from 'redux';
+import { persistStore, autoRehydrate } from 'redux-persist';
+import { AsyncStorage } from 'react-native';
 
-import thunk from "redux-thunk"; // (https://github.com/gaearon/redux-thunk)
-import createLogger = from('redux-logger'); // (https://github.com/theaqua/redux-logger)
+import thunk from 'redux-thunk'; // (https://github.com/gaearon/redux-thunk)
+import createLogger from 'redux-logger'; // (https://github.com/theaqua/redux-logger)
 
-var promise = require('./promise');
-var array = require('./array');
-var analytics = require('./analytics');
+import promise from './middleware/promise';
+import array from './middleware/array';
+import analytics from './middleware/analytics';
 
 // reducer
-var reducers = require('../reducers');
+import reducers from '../reducers';
 /* ************************************************************************** */
 
 var isDebuggingInChrome = __DEV__ && !!window.navigator.userAgent;

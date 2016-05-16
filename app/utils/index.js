@@ -1,5 +1,5 @@
 /**
- * @providesModule s5-utils
+ * @providesModule s5-util
  */
 
 const FacebookSDK = require('FacebookSDK');
