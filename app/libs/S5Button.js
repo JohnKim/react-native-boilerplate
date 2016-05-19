@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 
 import {
   Image,
-  StyleSheet
+  StyleSheet,
   Text,
   View,
   TouchableOpacity,
@@ -15,16 +15,16 @@ import {
 
 import S5Colors from 'S5Colors';
 
-import LinearGradient from 'react-native-linear-gradient');
+import LinearGradient from 'react-native-linear-gradient';
 
-class S5Button extends Component {
+export default class S5Button extends Component {
 
   static propTypes = {
-    type: React.PropTypes.oneOf(['primary', 'secondary', 'bordered']);
-    icon: React.PropTypes.number;
-    caption: React.PropTypes.string;
-    style: React.PropTypes.any;
-    onPress: React.PropTypes.func;
+    type: React.PropTypes.oneOf(['primary', 'secondary', 'bordered']),
+    icon: React.PropTypes.number,
+    caption: React.PropTypes.string,
+    style: React.PropTypes.any,
+    onPress: React.PropTypes.func,
   };
 
   //static defaultProps = {};
@@ -109,5 +109,3 @@ var styles = StyleSheet.create({
     color: S5Colors.lightText,
   }
 });
-
-module.exports = S5Button;

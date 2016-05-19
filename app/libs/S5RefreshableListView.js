@@ -36,7 +36,7 @@ export default class S5RefreshableListView extends Component {
    * On Android, the view should be touchable to trigger the refreshCallback
    * @param {function} refreshCallback The function to call to refresh the listview
    */
-  _renderRefreshableWaitingView(refreshCallback) {
+  _renderRefreshableWaitingView = (refreshCallback) => {
     if (Platform.OS !== 'android') {
       return (
         <View style={customStyles.refreshableView}>
@@ -64,7 +64,7 @@ export default class S5RefreshableListView extends Component {
    * Render the refreshable view when the pull to refresh has been activated
    * @platform ios
    */
-  _renderRefreshableWillRefreshView() {
+  _renderRefreshableWillRefreshView = () =>  {
     return (
       <View style={customStyles.refreshableView}>
         <Text style={customStyles.actionsLabel}>
@@ -77,7 +77,7 @@ export default class S5RefreshableListView extends Component {
   /**
    * Render the refreshable view when fetching
    */
-  _renderRefreshableFetchingView() {
+  _renderRefreshableFetchingView = () =>  {
     return (
       <View style={customStyles.refreshableView}>
         <GiftedSpinner />
@@ -89,7 +89,7 @@ export default class S5RefreshableListView extends Component {
    * Render the pagination view when waiting for touch
    * @param {function} paginateCallback The function to call to load more rows
    */
-  _renderPaginationWaitingView(paginateCallback) {
+  _renderPaginationWaitingView = (paginateCallback) => {
     return (
       <TouchableHighlight
         underlayColor='#c8c7cc'
@@ -106,7 +106,7 @@ export default class S5RefreshableListView extends Component {
   /**
    * Render the pagination view when fetching
    */
-  _renderPaginationFetchigView() {
+  _renderPaginationFetchigView = () =>  {
     return (
       <View style={customStyles.paginationView}>
         <GiftedSpinner />
@@ -117,7 +117,7 @@ export default class S5RefreshableListView extends Component {
   /**
    * Render the pagination view when end of list is reached
    */
-  _renderPaginationAllLoadedView() {
+  _renderPaginationAllLoadedView = () =>  {
     return (
       <View style={customStyles.paginationView}>
         <Text style={customStyles.actionsLabel}>
@@ -131,7 +131,7 @@ export default class S5RefreshableListView extends Component {
    * Render a view when there is no row to display at the first fetch
    * @param {function} refreshCallback The function to call to refresh the listview
    */
-  renderEmptyView(refreshCallback) {
+  renderEmptyView = (refreshCallback) => {
     if (this.props.renderEmptyView) {
       return this.props.renderEmptyView();
     }
@@ -157,7 +157,7 @@ export default class S5RefreshableListView extends Component {
   /**
    * Render a separator between rows
    */
-  renderSeparatorView() {
+  renderSeparatorView = () => {
     if (this.props.renderSeparatorView) {
       return this.props.renderSeparatorView();
     }
@@ -177,20 +177,20 @@ export default class S5RefreshableListView extends Component {
         firstLoader={true} // display a loader for the first fetching
 
         pagination={true} // enable infinite scrolling using touch to load more
-        paginationFetchigView={::this._renderPaginationFetchigView}
-        paginationAllLoadedView={::this._renderPaginationAllLoadedView}
-        paginationWaitingView={::this._renderPaginationWaitingView}
+        paginationFetchigView={this._renderPaginationFetchigView}
+        paginationAllLoadedView={this._renderPaginationAllLoadedView}
+        paginationWaitingView={this._renderPaginationWaitingView}
 
         refreshable={true} // enable pull-to-refresh for iOS and touch-to-refresh for Android
         refreshableViewHeight={50} // correct height is mandatory
         refreshableDistance={40} // the distance to trigger the pull-to-refresh - better to have it lower than refreshableViewHeight
-        refreshableFetchingView={::this._renderRefreshableFetchingView}
-        refreshableWillRefreshView={::this._renderRefreshableWillRefreshView}
-        refreshableWaitingView={::this._renderRefreshableWaitingView}
+        refreshableFetchingView={this._renderRefreshableFetchingView}
+        refreshableWillRefreshView={this._renderRefreshableWillRefreshView}
+        refreshableWaitingView={this._renderRefreshableWaitingView}
 
-        emptyView={::this.renderEmptyView}
+        emptyView={this.renderEmptyView}
 
-        renderSeparator={::this.renderSeparatorView}
+        renderSeparator={this.renderSeparatorView}
 
         //withSections={true} // enable sections
         //sectionHeaderView={this._renderSectionHeaderView}

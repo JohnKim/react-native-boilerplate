@@ -16,21 +16,21 @@ import {
 
 import S5Colors from 'S5Colors';
 
-export type Item = {
-  title: React.PropTypes.string;
-  icon: React.PropTypes.number;
-  layout: React.PropTypes.oneOf(['default', 'icon', 'title']);
-  onPress: React.PropTypes.func;
+export const Item = {
+  title: React.PropTypes.string,
+  icon: React.PropTypes.number,
+  layout: React.PropTypes.oneOf(['default', 'icon', 'title']),
+  onPress: React.PropTypes.func,
 };
 
 const sharedPropTypes = {
-  title: React.PropTypes.string.isRequired;
-  leftItem: Item;
-  rightItem: Item;
-  extraItems: React.PropTypes.arrayOf(Item);
-  foreground: React.PropTypes.oneOf(['default', 'icon', 'title']);
-  style: React.PropTypes.any;
-  children: React.PropTypes.any;
+  title: React.PropTypes.string.isRequired,
+  leftItem: Item,
+  rightItem: Item,
+  extraItems: React.PropTypes.arrayOf(Item),
+  foreground: React.PropTypes.oneOf(['default', 'icon', 'title']),
+  style: React.PropTypes.any,
+  children: React.PropTypes.any,
 };
 
 class S5HeaderAndroid extends Component {
@@ -135,8 +135,8 @@ class S5HeaderIOS extends React.Component {
 class ItemWrapperIOS extends Component {
 
   static propTypes = {
-    item: Item;
-    color: React.PropTypes.string;
+    item: Item,
+    color: React.PropTypes.string,
   };
 
   render() {

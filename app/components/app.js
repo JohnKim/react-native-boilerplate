@@ -25,7 +25,7 @@ class S5App extends Component {
   };
 
   componentDidMount() {
-    AppState.addEventListener('change', ::this.handleAppStateChange);
+    AppState.addEventListener('change', this.handleAppStateChange);
 
     // TODO: Make this list smaller, we basically download the whole internet
 
@@ -33,13 +33,13 @@ class S5App extends Component {
 
     updateInstallation({VERSION});
 
-    Linking.addEventListener('url', ::this.handleOpenURL);
+    Linking.addEventListener('url', this.handleOpenURL);
   }
 
   componentWillUnmount() {
-    AppState.removeEventListener('change', ::this.handleAppStateChange);
+    AppState.removeEventListener('change', this.handleAppStateChange);
 
-    Linking.removeEventListener('url', ::this.handleOpenURL);
+    Linking.removeEventListener('url', this.handleOpenURL);
   }
 
   handleAppStateChange(currentAppState) {

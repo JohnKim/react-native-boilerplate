@@ -1,22 +1,23 @@
 
 import React, { Component } from 'react';
-
 import {
   StatusBarIOS,
   TabBarIOS,
   TabBarItemIOS,
   Navigator,
 } from 'react-native';
+import { connect }      from 'react-redux';
 
+// S5 제공 라이브러리
 import { S5Colors }     from 's5-lib';
 import { switchTab }    from 's5-action';
 
+// Tab 페이지
 import MapView          from './map';
 import NotificationView from './notification';
 import PostView         from './post';
 import ProfileView      from './profile';
 
-import { connect }      from 'react-redux';
 
 class TabsView extends Component {
 

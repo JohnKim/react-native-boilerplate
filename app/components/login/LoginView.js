@@ -47,12 +47,6 @@ class LoginView extends Component {
           />
         </TouchableOpacity>
         <View style={styles.section}>
-          <Animated.Image
-            style={this.fadeIn(0)}
-            source={require('./img/devconf-logo.png')}
-          />
-        </View>
-        <View style={styles.section}>
           <Animated.Text style={[styles.h1, this.fadeIn(700, -20)]}>
             Pin to
           </Animated.Text>

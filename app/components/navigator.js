@@ -1,6 +1,5 @@
 
 import React, { Component } from 'react';
-
 import {
   Platform,
   BackAndroid,
@@ -10,7 +9,7 @@ import {
 
 import { switchTab } from 's5-action';
 
-import TabsView from './tabs/tabsView';
+import TabsView from './tabs/TabsView';
 
 import { connect } from 'react-redux';
 

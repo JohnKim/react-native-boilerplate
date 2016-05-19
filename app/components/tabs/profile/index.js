@@ -1,27 +1,24 @@
-/**
- *
- * @flow
- */
 
-'use strict';
+import React, { Component } from 'react';
+import {
+  View,
+  Navigator,
+} from 'react-native';
 
-var React = require('React');
-var ListContainer = require('S5ListContainer');
-var ProfilePicture = require('S5ProfilePicture');
-var PureListView = require('S5PureListView');
-var EmptyListRow = require('S5EmptyListRow');
-var PostCell = require('../post/PostCell')
-var View = require('View');
-var StyleSheet = require('S5StyleSheet');
-var { connect } = require('react-redux');
+// S5 제공 라이브러리
+import {
+  S5ListContainer,
+  S5ProfilePicture,
+  S5PureListView,
+  S5EmptyListRow,
+  S5StyleSheet,
+} from 's5-lib'
 
-var {
-  logOutWithPrompt, loadPostByPage
-} = require('../../actions');
+import { logOutWithPrompt, loadPostByPage } from 's5-action';
 
-var Navigator = require('Navigator');
-import type {State as User} from '../../reducers/user';
-import type {Post} from '../../reducers/post';
+import { connect }      from 'react-redux';
+
+import PostCell from '../post/PostCell';
 
 type Props = {
   user: User;

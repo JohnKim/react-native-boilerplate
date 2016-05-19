@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
 import { S5Button } from 's5-lib';
 import { logInWithFacebook } from 's5-action';
-import { connect } from ('react-redux');
+import { connect } from 'react-redux';
 
 // Login Button Class
 class LoginButton extends Component {
